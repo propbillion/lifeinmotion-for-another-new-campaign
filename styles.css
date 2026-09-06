@@ -5705,3 +5705,8 @@ letter-spacing: 0.045em !important;
   margin-bottom: 0.9rem;
 }
 .hero-token-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* ============================================
+   THE ARENA PIMPRI - Clear (unblurred) gated variant
+   ============================================ */
+.gated-clear > img { filter: none; transform: scale(1); }
