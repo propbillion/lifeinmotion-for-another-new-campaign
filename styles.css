@@ -5710,3 +5710,12 @@ letter-spacing: 0.045em !important;
    THE ARENA PIMPRI - Clear (unblurred) gated variant
    ============================================ */
 .gated-clear > img { filter: none; transform: scale(1); }
+
+/* ============================================
+   THE ARENA PIMPRI - Header Logo Image
+   ============================================ */
+.logo-img { display: flex; align-items: center; height: auto; }
+.logo-img img { height: 66px; width: auto; display: block; }
+@media (max-width: 640px) {
+  .logo-img img { height: 54px; }
+}
