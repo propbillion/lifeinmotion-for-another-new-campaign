@@ -308,6 +308,7 @@ document.addEventListener('click', function(e) {
 
     slides.forEach((slide) => {
       slide.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
         e.preventDefault();
         e.stopPropagation();
         const wasZoomed = slide.classList.contains('ag-zoomed');
