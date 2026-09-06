@@ -258,7 +258,7 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.25rem;
-  height: 82px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -310,7 +310,7 @@ button { font-family: inherit; cursor: pointer; }
 /* Segmented sticky action bar - Premium glassmorphism with brand tint */
 .action-bar-wrap {
   position: fixed;
-  top: 82px;
+  top: 96px;
   left: 0; right: 0;
   z-index: 55;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.78) 100%);
@@ -376,20 +376,20 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 768px) {
-  .header-row { height: 68px; padding: 0 1rem; }
+  .header-row { height: 80px; padding: 0 1rem; }
   .logo { font-size: 22px; }
   .header-cta { padding: 0.55rem 1.1rem; font-size: 13px; }
-  .action-bar-wrap { top: 68px; }
+  .action-bar-wrap { top: 80px; }
   .action-bar { padding: 0.4rem 0.5rem; }
   .action-chip { padding: 0.45rem 0.75rem; font-size: 12.5px; }
 }
 
 /* Page offset for fixed header + action bar */
 .page-offset {
-  padding-top: 130px; /* 82 + ~48 */
+  padding-top: 144px; /* 96 + ~48 */
 }
 @media (max-width: 768px) {
-  .page-offset { padding-top: 112px; }
+  .page-offset { padding-top: 124px; }
 }
 
 /* ============================================
@@ -2207,7 +2207,7 @@ input:focus-visible {
 /* Subtle ambient shimmer on action bar to hint swipe */
 .action-bar-wrap {
   position: fixed;
-  top: 82px;
+  top: 96px;
   left: 0; right: 0;
   z-index: 55;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.84) 100%);
@@ -5693,18 +5693,28 @@ letter-spacing: 0.045em !important;
 .upc-visual img { width: 100%; height: 100%; object-fit: cover; }
 
 .hero-token-pill {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(199,209,31,0.16);
-  border: 1px solid rgba(199,209,31,0.45);
-  color: var(--gold-light);
-  padding: 0.5rem 1.1rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: linear-gradient(135deg, #E9F04A 0%, #C7D11F 100%);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #241E38;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 650;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.9rem;
+  font-size: 14.5px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 0 0 0 rgba(199,209,31,0.55), 0 10px 30px -8px rgba(199,209,31,0.65);
+  animation: tokenPulse 2.2s ease-in-out infinite;
 }
-.hero-token-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+.hero-token-pill svg { width: 17px; height: 17px; flex-shrink: 0; }
+@keyframes tokenPulse {
+  0% { box-shadow: 0 0 0 0 rgba(233,240,74,0.55), 0 10px 30px -8px rgba(199,209,31,0.65); }
+  70% { box-shadow: 0 0 0 14px rgba(233,240,74,0), 0 10px 30px -8px rgba(199,209,31,0.65); }
+  100% { box-shadow: 0 0 0 0 rgba(233,240,74,0), 0 10px 30px -8px rgba(199,209,31,0.65); }
+}
+@media (max-width: 640px) {
+  .hero-token-pill { font-size: 12.5px; padding: 0.6rem 1.1rem; }
+}
 
 /* ============================================
    THE ARENA PIMPRI - Clear (unblurred) gated variant
@@ -5715,7 +5725,7 @@ letter-spacing: 0.045em !important;
    THE ARENA PIMPRI - Header Logo Image
    ============================================ */
 .logo-img { display: flex; align-items: center; height: auto; }
-.logo-img img { height: 66px; width: auto; display: block; }
+.logo-img img { height: 80px; width: auto; display: block; }
 @media (max-width: 640px) {
-  .logo-img img { height: 54px; }
+  .logo-img img { height: 65px; }
 }
