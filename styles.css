@@ -5471,6 +5471,10 @@ letter-spacing: 0.045em !important;
 .gated-soft-31 > img {
   filter: blur(2.2px) saturate(1.02);
 }
+/* Cost sheet visual: explicitly locked to ~30% blur so it's protected from future shared-class edits */
+.gated-costsheet > img {
+  filter: blur(2.2px) saturate(1.02);
+}
 
 /* Two-button stack inside a gated CTA needs slightly taller safe area */
 .gated-cta > div[style*="flex-direction:column"] .btn {
