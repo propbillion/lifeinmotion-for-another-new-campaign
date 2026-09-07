@@ -5590,15 +5590,35 @@ letter-spacing: 0.045em !important;
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
-  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease;
 }
 .unit-plan-card.tier-2 { border-left-color: rgba(23, 142, 199, 0.6); }
 .unit-plan-card.tier-3 { border-left-color: rgba(199, 209, 31, 0.75); }
 .unit-plan-card.tier-4 { border-left-color: rgba(4, 82, 145, 0.85); }
+.unit-plan-card.tier-2:hover { background-color: rgba(23, 142, 199, 0.035); border-color: rgba(23, 142, 199, 0.35); }
+.unit-plan-card.tier-3:hover { background-color: rgba(199, 209, 31, 0.05); border-color: rgba(199, 209, 31, 0.45); }
+.unit-plan-card.tier-4:hover { background-color: rgba(4, 82, 145, 0.035); border-color: rgba(4, 82, 145, 0.35); }
 .unit-plan-card:hover { box-shadow: 0 18px 36px -18px rgba(12, 46, 74, 0.2); transform: translateY(-3px); }
 .upc-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
 .upc-name { font-family: 'Source Serif 4', serif; font-size: 19px; color: var(--ink); font-weight: 500; line-height: 1.25; }
 .upc-sub { font-size: 12px; color: var(--slate); margin-top: 0.3rem; }
+.upc-sub-bold {
+  font-family: 'Source Serif 4', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  line-height: 1.4;
+  white-space: normal;
+  margin-top: 0;
+}
+.upc-sub-unit {
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--slate);
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 .upc-price { font-size: 14.5px; font-weight: 700; color: var(--brand-dark); white-space: nowrap; }
 
 .upc-cta-row { display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.15rem; }
@@ -5622,6 +5642,16 @@ letter-spacing: 0.045em !important;
   box-shadow: 0 10px 20px -10px rgba(7, 114, 181, 0.55);
 }
 .upc-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 14px 26px -10px rgba(7, 114, 181, 0.65); }
+.upc-btn.secondary,
+.upc-btn.tertiary,
+.upc-btn.quaternary {
+  padding: 0.55rem 0.9rem;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.upc-btn.secondary svg,
+.upc-btn.tertiary svg,
+.upc-btn.quaternary svg { width: 14px; height: 14px; }
 .upc-btn.secondary {
   background: var(--brand-soft);
   color: var(--brand-dark);
@@ -5635,12 +5665,12 @@ letter-spacing: 0.045em !important;
 }
 .upc-btn.tertiary:hover { background: rgba(199,209,31,0.22); transform: translateY(-2px); }
 .upc-btn.quaternary {
-  background: linear-gradient(135deg, #E8871E 0%, #B8481A 100%);
-  color: #FFF7EC;
-  border-color: transparent;
-  box-shadow: 0 8px 18px -9px rgba(184,72,26,0.55);
+  background: linear-gradient(120deg, #FDF3E6 0%, #FBE4C2 42%, #F0C48F 72%, #E8971E 100%);
+  color: #8A4712;
+  border-color: rgba(232, 151, 30, 0.3);
+  box-shadow: 0 6px 14px -10px rgba(232, 151, 30, 0.4);
 }
-.upc-btn.quaternary:hover { background: linear-gradient(135deg, #D97A15 0%, #A03D15 100%); transform: translateY(-2px); }
+.upc-btn.quaternary:hover { background: linear-gradient(120deg, #FBE8CE 0%, #F6D5A4 42%, #E8B36C 72%, #D9820F 100%); transform: translateY(-2px); }
 
 /* Large horizontal "get everything in one tap" banner */
 .all-plans-banner {
