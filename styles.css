@@ -1875,7 +1875,7 @@ input:focus-visible {
 .ag-slide {
   flex: 0 0 92vw;
   max-width: 900px;
-  aspect-ratio: 1280 / 452;
+  aspect-ratio: 688 / 462;
   border-radius: 18px;
   overflow: hidden;
   scroll-snap-align: start;
