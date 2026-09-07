@@ -1,12 +1,23 @@
 // Google Ads Conversion Tracking - The Arena Pimpri
 document.addEventListener('click', function(e) {
-  var el = e.target.closest('a[href*="wa.me"]');
+  var el = e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
   if (el && typeof gtag === 'function') {
     gtag('event', 'conversion', {
       'send_to': 'AW-17833027272/GyWTC26yyJAcEMjNubdC'
     });
   }
-});/* ============================================
+});
+
+// Fires the same conversion when a lead form (pre-register / hero) is submitted,
+// since these forms open WhatsApp via JS (window.open) rather than a clickable
+// <a href="wa.me..."> link, so the click listener above does not catch them.
+function fireFormConversion() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17833027272/GyWTC26yyJAcEMjNubdC'
+    });
+  }
+}/* ============================================
    THE ARENA PIMPRI - Production JS
    Performance-optimized, no framework dependencies
    ============================================ */
@@ -123,6 +134,7 @@ document.addEventListener('click', function(e) {
         'Mobile%3A+%2B91+' + encodeURIComponent(mob);
 
       window.open('https://wa.me/918857090799?text=' + message, '_blank');
+      fireFormConversion();
 
       const btn = form.querySelector('button[type="submit"]');
       if (btn) {
@@ -174,6 +186,7 @@ document.addEventListener('click', function(e) {
         'Mobile%3A+%2B91+' + encodeURIComponent(mob);
 
       window.open('https://wa.me/918857090799?text=' + message, '_blank');
+      fireFormConversion();
 
       const btn = heroForm.querySelector('button[type="submit"]');
       if (btn) {
