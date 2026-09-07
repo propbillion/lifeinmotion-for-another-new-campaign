@@ -3916,7 +3916,7 @@ body {
 .footer .slate, .footer [style*="--slate"] { color: rgba(255, 255, 255, 0.62) !important; }
 .footer ul li { color: rgba(255, 255, 255, 0.72) !important; }
 .footer-disclaimer {
-  color: rgba(255, 255, 255, 0.42) !important;
+  color: rgba(255, 255, 255, 0.68) !important;
   border-top: 1px solid rgba(7, 114, 181, 0.14);
 }
 .footer-disclaimer strong { color: var(--gold-light) !important; }
@@ -4546,15 +4546,39 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset !important;
 }
 .header-cta {
-  background: var(--brand) !important;
-  color: #ffffff !important;
-  border: 1px solid var(--brand) !important;
-  transition: all 0.4s var(--ease);
+  background: linear-gradient(135deg, #F0D488 0%, #B8860B 100%) !important;
+  color: #0C2E4A !important;
+  border: 1px solid rgba(184, 134, 11, 0.55) !important;
+  transition: all 0.18s ease !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 16px -6px rgba(184, 134, 11, 0.6), 0 0 0 1px rgba(255,255,255,0.35) inset;
+  animation: headerCtaPulse 2s ease-in-out infinite;
 }
+.header-cta::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.8) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: headerCtaShine 1.8s ease-in-out infinite;
+}
+.header-cta svg, .header-cta-text { position: relative; z-index: 1; }
 .header-cta:hover {
-  background: var(--brand-dark) !important;
-  border-color: var(--gold) !important;
-  box-shadow: 0 8px 20px -8px rgba(7, 114, 181, 0.4);
+  background: linear-gradient(135deg, #F5DFA0 0%, #C7961E 100%) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 10px 24px -8px rgba(184, 134, 11, 0.75);
+  transform: translateY(-1px) scale(1.03);
+}
+@keyframes headerCtaShine {
+  0% { left: -60%; }
+  55% { left: 130%; }
+  100% { left: 130%; }
+}
+@keyframes headerCtaPulse {
+  0%, 100% { box-shadow: 0 6px 16px -6px rgba(184, 134, 11, 0.6), 0 0 0 1px rgba(255,255,255,0.35) inset; }
+  50% { box-shadow: 0 6px 22px -3px rgba(184, 134, 11, 0.9), 0 0 0 1px rgba(255,255,255,0.35) inset; }
 }
 
 /* ---------- Action bar (glassy chip rail) ---------- */
@@ -5442,10 +5466,10 @@ letter-spacing: 0.045em !important;
 
 /* Lighter blur (~30-40%) for floor-plan cards, vs default heavier gated blur */
 .gated-soft > img {
-  filter: blur(2.6px) saturate(1.02);
+  filter: blur(0.9px) saturate(1.02);
 }
 .gated-soft-31 > img {
-  filter: blur(2.2px) saturate(1.02);
+  filter: blur(0.9px) saturate(1.02);
 }
 
 /* Two-button stack inside a gated CTA needs slightly taller safe area */
@@ -5716,7 +5740,7 @@ letter-spacing: 0.045em !important;
 /* ============================================
    THE ARENA PIMPRI - Token Phase CTA Slide + 30-35% Blur Class + Unit Plan Card Images
    ============================================ */
-.gated-soft-33 > img { filter: blur(2.4px) saturate(1.02); }
+.gated-soft-33 > img { filter: blur(0.9px) saturate(1.02); }
 
 .ag-slide-cta {
   background:
