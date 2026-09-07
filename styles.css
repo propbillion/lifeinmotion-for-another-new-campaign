@@ -5466,13 +5466,9 @@ letter-spacing: 0.045em !important;
 
 /* Lighter blur (~30-40%) for floor-plan cards, vs default heavier gated blur */
 .gated-soft > img {
-  filter: blur(0.9px) saturate(1.02);
+  filter: blur(2.6px) saturate(1.02);
 }
 .gated-soft-31 > img {
-  filter: blur(0.9px) saturate(1.02);
-}
-/* Cost sheet visual: keep the original ~30% blur strength as requested */
-.gated-costsheet > img {
   filter: blur(2.2px) saturate(1.02);
 }
 
@@ -5744,7 +5740,7 @@ letter-spacing: 0.045em !important;
 /* ============================================
    THE ARENA PIMPRI - Token Phase CTA Slide + 30-35% Blur Class + Unit Plan Card Images
    ============================================ */
-.gated-soft-33 > img { filter: blur(0.9px) saturate(1.02); }
+.gated-soft-33 > img { filter: blur(2.4px) saturate(1.02); }
 
 .ag-slide-cta {
   background:
