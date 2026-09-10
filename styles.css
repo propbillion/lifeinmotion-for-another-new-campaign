@@ -5324,6 +5324,46 @@ letter-spacing: 0.045em !important;
 }
 
 /* ---------- 2. SAMPLE FLAT VIDEO BUTTON - keep label visible on mobile ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.header-cta-call {
+  flex-shrink: 0;
+  padding: 0.65rem 1.1rem;
+  background: #fff;
+  color: var(--brand-dark);
+  border: 1.5px solid var(--brand);
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+.header-cta-call:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px -8px rgba(7, 114, 181, 0.5);
+}
+.header-cta-call svg { flex-shrink: 0; }
+@media (max-width: 520px) {
+  .header-cta-call {
+    padding: 0.55rem 0.85rem !important;
+    gap: 0.3rem !important;
+    font-size: 12px !important;
+  }
+  .header-cta-call svg { width: 13px; height: 13px; }
+}
+@media (max-width: 380px) {
+  .header-cta-call { padding: 0.5rem 0.7rem !important; font-size: 11px !important; }
+  .header-actions { gap: 0.4rem; }
+}
 @media (max-width: 520px) {
   .header-cta {
     padding: 0.5rem 0.8rem !important;
