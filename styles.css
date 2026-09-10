@@ -5362,8 +5362,8 @@ letter-spacing: 0.045em !important;
 .header-cta-call {
   flex-shrink: 0;
   padding: 0.65rem 1.1rem;
-  background: #fff;
-  color: var(--brand-dark);
+  background: var(--brand);
+  color: #fff;
   border: 1.5px solid var(--brand);
   border-radius: 9999px;
   font-size: 13.5px;
@@ -5375,8 +5375,8 @@ letter-spacing: 0.045em !important;
   white-space: nowrap;
 }
 .header-cta-call:hover {
-  background: var(--brand);
-  color: #fff;
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
   transform: translateY(-1px);
   box-shadow: 0 8px 18px -8px rgba(7, 114, 181, 0.5);
 }
