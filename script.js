@@ -501,6 +501,12 @@ function fireFormConversion() {
     bar.appendChild(clone);
   });
 
+  // Give every pill (including the clones) its own staggered shine timing,
+  // so the sweep visibly travels pill-to-pill instead of only showing on one.
+  Array.from(bar.children).forEach(function (chip, i) {
+    chip.style.setProperty('--shine-delay', (i % 8) * 0.5 + 's');
+  });
+
   let autoScroll = true;
   let resumeTimer = null;
   const speed = 0.7; // px per frame - slow but clearly visible, continuous drift
