@@ -503,7 +503,7 @@ function fireFormConversion() {
 
   let autoScroll = true;
   let resumeTimer = null;
-  const speed = 0.4; // px per frame - slow, continuous drift
+  const speed = 0.7; // px per frame - slow but clearly visible, continuous drift
 
   function tick() {
     if (autoScroll && bar.scrollWidth > 0) {
