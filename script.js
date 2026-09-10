@@ -486,3 +486,49 @@ function fireFormConversion() {
     img.src = proxied;
   });
 })();
+
+// ---------- Action bar (pills) continuous auto-scroll marquee ----------
+(function () {
+  const bar = document.querySelector('.action-bar');
+  if (!bar) return;
+
+  // Duplicate all chips once so the row can loop seamlessly, like a news ticker.
+  const originalChildren = Array.from(bar.children);
+  originalChildren.forEach(function (chip) {
+    const clone = chip.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('tabindex', '-1');
+    bar.appendChild(clone);
+  });
+
+  let autoScroll = true;
+  let resumeTimer = null;
+  const speed = 0.4; // px per frame - slow, continuous drift
+
+  function tick() {
+    if (autoScroll && bar.scrollWidth > 0) {
+      bar.scrollLeft += speed;
+      const half = bar.scrollWidth / 2;
+      if (bar.scrollLeft >= half) {
+        bar.scrollLeft -= half;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function pause() {
+    autoScroll = false;
+    if (resumeTimer) clearTimeout(resumeTimer);
+  }
+  function scheduleResume() {
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function () { autoScroll = true; }, 1000);
+  }
+
+  bar.addEventListener('touchstart', pause, { passive: true });
+  bar.addEventListener('touchend', scheduleResume, { passive: true });
+  bar.addEventListener('mousedown', pause);
+  window.addEventListener('mouseup', scheduleResume);
+  bar.addEventListener('wheel', function () { pause(); scheduleResume(); }, { passive: true });
+})();
