@@ -4603,6 +4603,35 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px -10px rgba(7, 114, 181, 0.45);
 }
+.action-chip-featured {
+  background: linear-gradient(135deg, #F0D488 0%, #B8860B 100%) !important;
+  color: #0C2E4A !important;
+  border: 1px solid rgba(184, 134, 11, 0.55) !important;
+  font-weight: 700 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 16px -6px rgba(184, 134, 11, 0.6), 0 0 0 1px rgba(255,255,255,0.35) inset;
+  animation: headerCtaPulse 2s ease-in-out infinite;
+}
+.action-chip-featured::before, .action-chip-featured::after { display: none !important; }
+.action-chip-featured::after {
+  content: '';
+  display: block !important;
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.8) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: headerCtaShine 1.8s ease-in-out infinite;
+}
+.action-chip-featured:hover {
+  background: linear-gradient(135deg, #F5DFA0 0%, #C7961E 100%) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 10px 24px -8px rgba(184, 134, 11, 0.75);
+  transform: translateY(-1px) scale(1.04);
+}
+/* Continuous auto-scroll marquee needs direct scrollLeft jumps, not CSS-smoothed ones */
+.action-bar { scroll-behavior: auto !important; }
 
 /* ---------- Premium CTA buttons (Apple-grade) ---------- */
 .btn-glass-brand {
